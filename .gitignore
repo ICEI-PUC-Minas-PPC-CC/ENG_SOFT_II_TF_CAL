@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+.venv
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Testes
+.pytest_cache/
+.coverage
+htmlcov/
+*.cover
+.hypothesis/
+test-results.xml
+.coverage.xml
+
+# Dados da aplicação
+tasks.json
+*.db
+*.sqlite
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Jenkins
+artifacts/
+deploy/
+workspace/
+
+# Docker
+*.log
+

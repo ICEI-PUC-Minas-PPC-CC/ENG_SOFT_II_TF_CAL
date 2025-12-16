@@ -1,0 +1,66 @@
+# GitHub Actions CI/CD Pipeline
+# Alternativa ao Jenkins - Executa automaticamente no GitHub
+
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout código
+      uses: actions/checkout@v3
+      
+    - name: Configurar Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+        
+    - name: Instalar dependências
+      run: |
+        cd src
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        
+    - name: Executar testes
+      run: |
+        cd src
+        pytest tests/ -v --junitxml=test-results.xml --cov=. --cov-report=xml --cov-report=html
+        
+    - name: Publicar resultados de testes
+      uses: EnricoMi/publish-unit-test-result-action@v2
+      if: always()
+      with:
+        files: src/test-results.xml
+        
+    - name: Publicar cobertura de código
+      uses: codecov/codecov-action@v3
+      with:
+        file: ./src/coverage.xml
+        flags: unittests
+        name: codecov-umbrella
+        
+    - name: Upload relatório de cobertura HTML
+      uses: actions/upload-artifact@v3
+      with:
+        name: coverage-report
+        path: src/htmlcov/
+        
+    - name: Build Docker (opcional)
+      continue-on-error: true
+      run: |
+        cd src
+        docker build -t todo-api:${{ github.run_number }} .
+        
+    - name: Informações do build
+      run: |
+        echo "Build Number: ${{ github.run_number }}"
+        echo "Commit: ${{ github.sha }}"
+        echo "Branch: ${{ github.ref }}"
+
