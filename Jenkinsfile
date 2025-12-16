@@ -261,7 +261,7 @@ pipeline {
             emailext (
                 subject: "Pipeline ${env.JOB_NAME} - Build #${env.BUILD_NUMBER} - SUCESSO",
                 body: "O build #${env.BUILD_NUMBER} foi concluído com sucesso!\n\nVisualize: ${env.BUILD_URL}",
-                to: "${env.CHANGE_AUTHOR_EMAIL ?: 'devops@example.com'}"
+                to: "${env.CHANGE_AUTHOR_EMAIL ?: 'marcelleandradepereira@gmail.com'}"
             )
         }
         failure {
@@ -269,7 +269,7 @@ pipeline {
             emailext (
                 subject: "Pipeline ${env.JOB_NAME} - Build #${env.BUILD_NUMBER} - FALHA",
                 body: "O build #${env.BUILD_NUMBER} falhou!\n\nVisualize: ${env.BUILD_URL}",
-                to: "${env.CHANGE_AUTHOR_EMAIL ?: 'devops@example.com'}"
+                to: "${env.CHANGE_AUTHOR_EMAIL ?: 'marcelleandradepereira@gmail.com'}"
             )
         }
         unstable {
