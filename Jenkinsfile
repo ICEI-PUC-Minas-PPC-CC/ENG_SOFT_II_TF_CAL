@@ -12,7 +12,14 @@ pipeline {
             steps {
                 echo 'Fazendo checkout do código...'
                 checkout scm
-                sh 'git log -1 --pretty=format:"%h - %an, %ar : %s"'
+                script {
+                    def isUnix = isUnix()
+                    if (isUnix) {
+                        sh 'git log -1 --pretty=format:"%h - %an, %ar : %s"'
+                    } else {
+                        bat 'git log -1 --pretty=format:"%%h - %%an, %%ar : %%s"'
+                    }
+                }
             }
         }
         
@@ -20,12 +27,25 @@ pipeline {
             steps {
                 echo 'Construindo a aplicação...'
                 dir('src') {
-                    sh '''
-                        python3 -m venv venv || python -m venv venv
-                        source venv/bin/activate || venv\\Scripts\\activate
-                        pip install --upgrade pip
-                        pip install -r requirements.txt
-                    '''
+                    script {
+                        // Detecta o sistema operacional
+                        def isUnix = isUnix()
+                        if (isUnix) {
+                            sh '''
+                                python3 -m venv venv || python -m venv venv
+                                source venv/bin/activate
+                                pip install --upgrade pip
+                                pip install -r requirements.txt
+                            '''
+                        } else {
+                            bat '''
+                                python -m venv venv
+                                call venv\\Scripts\\activate.bat
+                                python -m pip install --upgrade pip
+                                pip install -r requirements.txt
+                            '''
+                        }
+                    }
                 }
             }
         }
@@ -34,10 +54,20 @@ pipeline {
             steps {
                 echo 'Executando testes automatizados...'
                 dir('src') {
-                    sh '''
-                        source venv/bin/activate || venv\\Scripts\\activate
-                        pytest tests/ -v --junitxml=test-results.xml --cov=. --cov-report=xml --cov-report=html
-                    '''
+                    script {
+                        def isUnix = isUnix()
+                        if (isUnix) {
+                            sh '''
+                                source venv/bin/activate
+                                pytest tests/ -v --junitxml=test-results.xml --cov=. --cov-report=xml --cov-report=html
+                            '''
+                        } else {
+                            bat '''
+                                call venv\\Scripts\\activate.bat
+                                pytest tests/ -v --junitxml=test-results.xml --cov=. --cov-report=xml --cov-report=html
+                            '''
+                        }
+                    }
                 }
             }
             post {
@@ -58,11 +88,20 @@ pipeline {
             steps {
                 echo 'Verificando qualidade do código...'
                 dir('src') {
-                    sh '''
-                        source venv/bin/activate || venv\\Scripts\\activate
-                        # Verifica se há erros de sintaxe
-                        python -m py_compile app.py || echo "Aviso: Verificação de sintaxe concluída"
-                    '''
+                    script {
+                        def isUnix = isUnix()
+                        if (isUnix) {
+                            sh '''
+                                source venv/bin/activate
+                                python -m py_compile app.py || echo "Aviso: Verificação de sintaxe concluída"
+                            '''
+                        } else {
+                            bat '''
+                                call venv\\Scripts\\activate.bat
+                                python -m py_compile app.py
+                            '''
+                        }
+                    }
                 }
             }
         }
@@ -71,17 +110,33 @@ pipeline {
             steps {
                 echo 'Empacotando artefatos...'
                 script {
+                    def isUnix = isUnix()
                     dir('src') {
-                        sh '''
-                            mkdir -p ../artifacts || mkdir ..\\artifacts
-                            cp -r . ../artifacts/ 2>/dev/null || xcopy /E /I /Y . ..\\artifacts\\ 2>nul || true
-                        '''
+                        if (isUnix) {
+                            sh '''
+                                mkdir -p ../artifacts
+                                cp -r . ../artifacts/
+                            '''
+                        } else {
+                            bat '''
+                                if not exist ..\\artifacts mkdir ..\\artifacts
+                                xcopy /E /I /Y . ..\\artifacts\\
+                            '''
+                        }
                     }
-                    sh '''
-                        echo "Build Number: ${BUILD_NUMBER}" > artifacts/build-info.txt
-                        echo "Build Time: $(date 2>/dev/null || echo %date% %time%)" >> artifacts/build-info.txt
-                        echo "Git Commit: $(git rev-parse HEAD 2>/dev/null || echo N/A)" >> artifacts/build-info.txt
-                    '''
+                    if (isUnix) {
+                        sh """
+                            echo "Build Number: ${BUILD_NUMBER}" > artifacts/build-info.txt
+                            echo "Build Time: \$(date)" >> artifacts/build-info.txt
+                            echo "Git Commit: \$(git rev-parse HEAD)" >> artifacts/build-info.txt
+                        """
+                    } else {
+                        bat """
+                            echo Build Number: ${BUILD_NUMBER} > artifacts\\build-info.txt
+                            echo Build Time: %date% %time% >> artifacts\\build-info.txt
+                            git rev-parse HEAD >> artifacts\\build-info.txt 2>nul || echo N/A >> artifacts\\build-info.txt
+                        """
+                    }
                 }
             }
             post {
@@ -96,8 +151,14 @@ pipeline {
                 echo 'Construindo imagem Docker...'
                 script {
                     try {
-                        sh "docker build -t ${DOCKER_IMAGE} -f src/Dockerfile src/"
-                        sh "docker tag ${DOCKER_IMAGE} ${APP_NAME}:latest"
+                        def isUnix = isUnix()
+                        if (isUnix) {
+                            sh "docker build -t ${DOCKER_IMAGE} -f src/Dockerfile src/"
+                            sh "docker tag ${DOCKER_IMAGE} ${APP_NAME}:latest"
+                        } else {
+                            bat "docker build -t ${DOCKER_IMAGE} -f src\\Dockerfile src\\"
+                            bat "docker tag ${DOCKER_IMAGE} ${APP_NAME}:latest"
+                        }
                     } catch (Exception e) {
                         echo "⚠️ Docker não disponível, pulando etapa de build Docker"
                         echo "Erro: ${e.getMessage()}"
@@ -110,19 +171,40 @@ pipeline {
             steps {
                 echo 'Realizando deploy...'
                 script {
+                    def isUnix = isUnix()
                     // Deploy local - cria diretório de deploy
-                    sh '''
-                        mkdir -p deploy || mkdir deploy
-                        cp -r src/* deploy/ || xcopy /E /I src\\* deploy\\
-                        echo "Deploy realizado em: $(date)" > deploy/deploy-info.txt
-                    '''
+                    if (isUnix) {
+                        sh '''
+                            mkdir -p deploy
+                            cp -r src/* deploy/
+                            echo "Deploy realizado em: $(date)" > deploy/deploy-info.txt
+                        '''
+                    } else {
+                        bat '''
+                            if not exist deploy mkdir deploy
+                            xcopy /E /I /Y src\\* deploy\\
+                            echo Deploy realizado em: %date% %time% > deploy\\deploy-info.txt
+                        '''
+                    }
                     
                     // Tenta parar container antigo e iniciar novo (se Docker estiver disponível)
-                    sh '''
-                        docker stop ${APP_NAME} || true
-                        docker rm ${APP_NAME} || true
-                        docker run -d --name ${APP_NAME} -p 5000:5000 ${DOCKER_IMAGE} || echo "Docker não disponível para deploy"
-                    '''
+                    try {
+                        if (isUnix) {
+                            sh """
+                                docker stop ${APP_NAME} || true
+                                docker rm ${APP_NAME} || true
+                                docker run -d --name ${APP_NAME} -p 5000:5000 ${DOCKER_IMAGE} || echo "Docker não disponível para deploy"
+                            """
+                        } else {
+                            bat """
+                                docker stop ${APP_NAME} 2>nul || echo Container não existe
+                                docker rm ${APP_NAME} 2>nul || echo Container não existe
+                                docker run -d --name ${APP_NAME} -p 5000:5000 ${DOCKER_IMAGE} || echo Docker não disponível para deploy
+                            """
+                        }
+                    } catch (Exception e) {
+                        echo "Docker não disponível para deploy: ${e.getMessage()}"
+                    }
                 }
             }
             post {
