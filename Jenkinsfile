@@ -78,7 +78,9 @@ pipeline {
                         reportDir: 'src/htmlcov',
                         reportFiles: 'index.html',
                         reportName: 'Relatório de Cobertura de Testes',
-                        keepAll: true
+                        keepAll: true,
+                        alwaysLinkToLastBuild: true,
+                        allowMissing: false
                     ])
                 }
             }
