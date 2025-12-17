@@ -73,7 +73,7 @@ O pipeline CI/CD foi implementado no arquivo `Jenkinsfile` e contém as seguinte
 ### Prints do Pipeline
 
 #### Print 1: Pipeline em Execução
-<img src="docs\img\Captura de tela 2025-12-16 203315.png" alt="Pipeline Executando">
+<img src="docs/img/Captura de tela 2025-12-16 203315.png" alt="Pipeline Executando">
 *Descrição: Pipeline mostrando todas as stages sendo executadas*
 
 #### Print 2: Status Final do Build
