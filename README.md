@@ -4,20 +4,21 @@
 `Disciplina: Engenharia de Software II`  
 `2024 - Trabalho Final: Pipeline CI/CD com Jenkins`
 
-## 📋 Integrantes
+## Integrantes
 
-- [Nome do Integrante 1]
-- [Nome do Integrante 2]
-- [Nome do Integrante 3]
-- [Nome do Integrante 4]
+- João Henrique dos Santos Ferreira
+- Marcelle Andrade Pereira 
+- Nicolas Martins Lorena 
+- Vinicius Corrêa de Assis 
+- Pedro Balsamão da Costa
 
-## 👨‍🏫 Professor
+## Professor
 
-- [Nome do Professor]
+- Diego Roberto Gonçalves de Pontes
 
 ---
 
-## 🎯 Descrição do Projeto
+## Descrição do Projeto
 
 Este projeto implementa uma **API REST** para gerenciamento de tarefas (TODO) desenvolvida em **Python/Flask**, com integração completa de **pipeline CI/CD utilizando Jenkins**. A aplicação demonstra práticas de engenharia de software, incluindo desenvolvimento, testes automatizados, build, execução e documentação.
 
@@ -39,7 +40,7 @@ Este projeto implementa uma **API REST** para gerenciamento de tarefas (TODO) de
 
 ---
 
-## 🏗️ Arquitetura da Aplicação
+## Arquitetura da Aplicação
 
 ```
 ENG_SOFT_II_TF_CAL/
@@ -68,7 +69,7 @@ ENG_SOFT_II_TF_CAL/
 
 ---
 
-## 🚀 Como Executar a Aplicação
+## Como Executar a Aplicação
 
 ### Pré-requisitos
 
@@ -145,7 +146,7 @@ docker rm todo-api
 
 ---
 
-## 🧪 Como Executar os Testes
+## Como Executar os Testes
 
 ### Executar todos os testes
 
@@ -176,7 +177,7 @@ src/htmlcov/index.html
 
 ### Testes Implementados
 
-#### ✅ Testes que Passam (10 testes)
+#### Testes que Passam (10 testes)
 
 1. `test_health_check` - Verifica endpoint de health check
 2. `test_index_endpoint` - Verifica endpoint raiz
@@ -188,7 +189,7 @@ src/htmlcov/index.html
 8. `test_filter_tasks_by_status` - Filtra tarefas por status
 9. `test_create_task_without_title_fails` - Valida criação sem título
 
-#### ❌ Testes que Falham Intencionalmente (6 testes)
+#### Testes que Falham Intencionalmente (6 testes)
 
 Estes testes foram criados para demonstrar funcionalidades **não implementadas** na aplicação:
 
@@ -203,7 +204,7 @@ Estes testes foram criados para demonstrar funcionalidades **não implementadas*
 
 ---
 
-## 🔄 Pipeline CI/CD - Jenkinsfile
+## Pipeline CI/CD - Jenkinsfile
 
 O pipeline está configurado no arquivo `Jenkinsfile` na raiz do projeto e contém as seguintes **stages**:
 
@@ -248,7 +249,7 @@ O pipeline está configurado no arquivo `Jenkinsfile` na raiz do projeto e cont�
 
 ---
 
-## 📊 Relatórios e Métricas
+## Relatórios e Métricas
 
 ### Relatórios Gerados pelo Jenkins
 
@@ -267,36 +268,31 @@ O pipeline está configurado no arquivo `Jenkinsfile` na raiz do projeto e cont�
 
 ---
 
-## 📸 Prints do Pipeline
+## Prints do Pipeline
 
-### Exemplo de Execução do Pipeline
+### Pipeline em Execução
 
-```
-[Pipeline] stage
-[Pipeline] { (Checkout)
-[Pipeline] echo
-🔄 Fazendo checkout do código...
-[Pipeline] stage
-[Pipeline] { (Build)
-[Pipeline] echo
-🔨 Construindo a aplicação...
-[Pipeline] stage
-[Pipeline] { (Test)
-[Pipeline] echo
-🧪 Executando testes automatizados...
-[Pipeline] junit
-[Pipeline] publishHTML
-[Pipeline] stage
-[Pipeline] { (Deploy)
-[Pipeline] echo
-🚀 Realizando deploy...
-[Pipeline] echo
-✅ Deploy realizado com sucesso!
-```
+![Pipeline Executando](docs/img/Captura de tela 2025-12-16 203315.png)
+*Pipeline mostrando todas as stages sendo executadas*
+
+### Status Final
+
+![Status Build](docs/img/Captura de tela 2025-12-16 203338.png)
+*Status UNSTABLE (amarelo) devido aos 6 testes que falham intencionalmente*
+
+### Relatório JUnit
+
+![Test Results](docs/img/Captura de tela 2025-12-16 204515.png)
+*Relatório JUnit mostrando 9 testes passando e 6 falhando*
+
+### Relatório de Cobertura
+
+![Cobertura](docs/img/Captura de tela 2025-12-16 204541.png)
+*Relatório HTML de cobertura de código (94%)*
 
 ### Status dos Testes
 
-- ✅ **10 testes passando**
+- ✅ **9 testes passando**
 - ❌ **6 testes falhando** (intencionalmente)
 
 ---
@@ -322,7 +318,7 @@ O pipeline está configurado no arquivo `Jenkinsfile` na raiz do projeto e cont�
 
 ---
 
-## 🔧 Configuração do Jenkins
+## Configuração do Jenkins
 
 > **Não tem Jenkins?** Veja [INSTALAR_JENKINS.md](INSTALAR_JENKINS.md) para instalar, ou use **GitHub Actions** como alternativa (já configurado em `.github/workflows/ci.yml`)!
 
@@ -352,7 +348,7 @@ O pipeline está configurado no arquivo `Jenkinsfile` na raiz do projeto e cont�
 
 ---
 
-## 📚 Exemplos de Uso da API
+## Exemplos de Uso da API
 
 ### Criar uma Tarefa
 
@@ -403,7 +399,7 @@ curl -X DELETE http://localhost:5000/tasks/1
 
 ---
 
-## 🎓 Conclusões e Aprendizados
+## Conclusões e Aprendizados
 
 ### O que foi aprendido:
 
@@ -432,13 +428,13 @@ curl -X DELETE http://localhost:5000/tasks/1
 
 ---
 
-## 📄 Licença
+## Licença
 
 Este projeto foi desenvolvido para fins educacionais.
 
 ---
 
-## 🔗 Links Úteis
+## Links Úteis
 
 - [Documentação Flask](https://flask.palletsprojects.com/)
 - [Documentação pytest](https://docs.pytest.org/)
@@ -447,10 +443,4 @@ Este projeto foi desenvolvido para fins educacionais.
 
 ---
 
-## 📞 Contato
-
-Para dúvidas ou sugestões, entre em contato através do repositório GitHub.
-
----
-
-**Desenvolvido com ❤️ para demonstrar práticas de CI/CD com Jenkins**
+**Desenvolvido para demonstrar práticas de CI/CD com Jenkins**
