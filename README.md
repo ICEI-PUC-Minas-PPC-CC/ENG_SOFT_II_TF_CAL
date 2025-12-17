@@ -278,22 +278,22 @@ O pipeline está configurado no arquivo `Jenkinsfile` na raiz do projeto e cont�
 
 ### Pipeline em Execução
 
-![Pipeline Executando](https://github.com/ICEI-PUC-Minas-PPC-CC/ENG_SOFT_II_TF_CAL/blob/main/docs/img/Captura%20de%20tela%2025-12-16%20203315.png)
+<img src="https://github.com/ICEI-PUC-Minas-PPC-CC/ENG_SOFT_II_TF_CAL/blob/main/docs/img/Captura%20de%20tela%2025-12-16%20203315.png" alt="Pipeline Executando">
 *Pipeline mostrando todas as stages sendo executadas*
 
 ### Status Final
 
-![Status Build](https://github.com/ICEI-PUC-Minas-PPC-CC/ENG_SOFT_II_TF_CAL/blob/main/docs/img/Captura%20de%20tela%2025-12-16%20203338.png)
+<img src="https://github.com/ICEI-PUC-Minas-PPC-CC/ENG_SOFT_II_TF_CAL/blob/main/docs/img/Captura%20de%20tela%2025-12-16%20203338.png" alt="Status Build">
 *Status UNSTABLE (amarelo) devido aos 6 testes que falham intencionalmente*
 
 ### Relatório JUnit
 
-![Test Results](https://github.com/ICEI-PUC-Minas-PPC-CC/ENG_SOFT_II_TF_CAL/blob/main/docs/img/Captura%20de%20tela%2025-12-16%20204515.png)
+<img src="https://github.com/ICEI-PUC-Minas-PPC-CC/ENG_SOFT_II_TF_CAL/blob/main/docs/img/Captura%20de%20tela%2025-12-16%20204515.png" alt="Test Results">
 *Relatório JUnit mostrando 9 testes passando e 6 falhando*
 
 ### Relatório de Cobertura
 
-![Cobertura](https://github.com/ICEI-PUC-Minas-PPC-CC/ENG_SOFT_II_TF_CAL/blob/main/docs/img/Captura%20de%20tela%2025-12-16%20204541.png)
+<img src="https://github.com/ICEI-PUC-Minas-PPC-CC/ENG_SOFT_II_TF_CAL/blob/main/docs/img/Captura%20de%20tela%2025-12-16%20204541.png" alt="Cobertura">
 *Relatório HTML de cobertura de código (94%)*
 
 ### Status dos Testes

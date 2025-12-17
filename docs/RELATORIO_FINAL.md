@@ -73,15 +73,15 @@ O pipeline CI/CD foi implementado no arquivo `Jenkinsfile` e contém as seguinte
 ### Prints do Pipeline
 
 #### Print 1: Pipeline em Execução
-![Pipeline Executando](https://github.com/ICEI-PUC-Minas-PPC-CC/ENG_SOFT_II_TF_CAL/blob/main/docs/img/Captura%20de%20tela%2025-12-16%20203315.png)
+<img src="https://github.com/ICEI-PUC-Minas-PPC-CC/ENG_SOFT_II_TF_CAL/blob/main/docs/img/Captura%20de%20tela%2025-12-16%20203315.png" alt="Pipeline Executando">
 *Descrição: Pipeline mostrando todas as stages sendo executadas*
 
 #### Print 2: Status Final do Build
-![Status Build](https://github.com/ICEI-PUC-Minas-PPC-CC/ENG_SOFT_II_TF_CAL/blob/main/docs/img/Captura%20de%20tela%2025-12-16%20203338.png)
+<img src="https://github.com/ICEI-PUC-Minas-PPC-CC/ENG_SOFT_II_TF_CAL/blob/main/docs/img/Captura%20de%20tela%2025-12-16%20203338.png" alt="Status Build">
 *Descrição: Status final mostrando UNSTABLE (amarelo) devido aos 6 testes que falham intencionalmente*
 
 #### Print 3: Console Output
-![Console Output](https://github.com/ICEI-PUC-Minas-PPC-CC/ENG_SOFT_II_TF_CAL/blob/main/docs/img/Captura%20de%20tela%2025-12-16%20204107.png)
+<img src="https://github.com/ICEI-PUC-Minas-PPC-CC/ENG_SOFT_II_TF_CAL/blob/main/docs/img/Captura%20de%20tela%2025-12-16%20204107.png" alt="Console Output">
 *Descrição: Logs do pipeline durante execução*
 
 ---
@@ -119,7 +119,7 @@ O pipeline CI/CD foi implementado no arquivo `Jenkinsfile` e contém as seguinte
 
 ### Relatório JUnit
 
-![Relatório JUnit](https://github.com/ICEI-PUC-Minas-PPC-CC/ENG_SOFT_II_TF_CAL/blob/main/docs/img/Captura%20de%20tela%2025-12-16%20204515.png)
+<img src="https://github.com/ICEI-PUC-Minas-PPC-CC/ENG_SOFT_II_TF_CAL/blob/main/docs/img/Captura%20de%20tela%2025-12-16%20204515.png" alt="Relatório JUnit">
 *Descrição: Relatório JUnit completo gerado pelo Jenkins mostrando 9 testes passando e 6 falhando*
 
 ---
@@ -134,7 +134,7 @@ O pipeline CI/CD foi implementado no arquivo `Jenkinsfile` e contém as seguinte
 | Linhas Cobertas | ~186/198 |
 | Funções Cobertas | Todas principais |
 
-![Cobertura Detalhada](https://github.com/ICEI-PUC-Minas-PPC-CC/ENG_SOFT_II_TF_CAL/blob/main/docs/img/Captura%20de%20tela%2025-12-16%20204541.png)
+<img src="https://github.com/ICEI-PUC-Minas-PPC-CC/ENG_SOFT_II_TF_CAL/blob/main/docs/img/Captura%20de%20tela%2025-12-16%20204541.png" alt="Cobertura Detalhada">
 *Descrição: Relatório detalhado de cobertura por arquivo*
 
 ### Artefatos Gerados
@@ -145,7 +145,7 @@ O pipeline CI/CD foi implementado no arquivo `Jenkinsfile` e contém as seguinte
 - `coverage.xml` - Relatório de cobertura XML
 - `build-info.txt` - Informações do build
 
-![Artefatos](https://github.com/ICEI-PUC-Minas-PPC-CC/ENG_SOFT_II_TF_CAL/blob/main/docs/img/Captura%20de%20tela%2025-12-16%20205057.png)
+<img src="https://github.com/ICEI-PUC-Minas-PPC-CC/ENG_SOFT_II_TF_CAL/blob/main/docs/img/Captura%20de%20tela%2025-12-16%20205057.png" alt="Artefatos">
 *Descrição: Lista de artefatos empacotados pelo pipeline*
 
 ---
@@ -159,7 +159,7 @@ O pipeline CI/CD foi implementado no arquivo `Jenkinsfile` e contém as seguinte
 GET http://localhost:5000/health
 ```
 
-![Health Check](https://github.com/ICEI-PUC-Minas-PPC-CC/ENG_SOFT_II_TF_CAL/blob/main/docs/img/Captura%20de%20tela%2025-12-16%20205452.png)
+<img src="https://github.com/ICEI-PUC-Minas-PPC-CC/ENG_SOFT_II_TF_CAL/blob/main/docs/img/Captura%20de%20tela%2025-12-16%20205452.png" alt="Health Check">
 
 **Resposta Esperada:**
 ```json
@@ -183,7 +183,7 @@ Content-Type: application/json
 }
 ```
 
-![Criar Tarefa](https://github.com/ICEI-PUC-Minas-PPC-CC/ENG_SOFT_II_TF_CAL/blob/main/docs/img/Captura%20de%20tela%2025-12-16%20210641.png)
+<img src="https://github.com/ICEI-PUC-Minas-PPC-CC/ENG_SOFT_II_TF_CAL/blob/main/docs/img/Captura%20de%20tela%2025-12-16%20210641.png" alt="Criar Tarefa">
 
 ### Print 3: Listar Tarefas
 
@@ -192,7 +192,7 @@ Content-Type: application/json
 GET http://localhost:5000/tasks
 ```
 
-![Listar Tarefas](https://github.com/ICEI-PUC-Minas-PPC-CC/ENG_SOFT_II_TF_CAL/blob/main/docs/img/Captura%20de%20tela%2025-12-16%20210843.png)
+<img src="https://github.com/ICEI-PUC-Minas-PPC-CC/ENG_SOFT_II_TF_CAL/blob/main/docs/img/Captura%20de%20tela%2025-12-16%20210843.png" alt="Listar Tarefas">
 
 ### Print 4: Atualizar Tarefa
 
@@ -207,7 +207,7 @@ Content-Type: application/json
 }
 ```
 
-![Atualizar Tarefa](https://github.com/ICEI-PUC-Minas-PPC-CC/ENG_SOFT_II_TF_CAL/blob/main/docs/img/Captura%20de%20tela%2025-12-16%20211222.png)
+<img src="https://github.com/ICEI-PUC-Minas-PPC-CC/ENG_SOFT_II_TF_CAL/blob/main/docs/img/Captura%20de%20tela%2025-12-16%20211222.png" alt="Atualizar Tarefa">
 
 ### Print 5: Buscar Tarefa por ID
 
@@ -216,7 +216,7 @@ Content-Type: application/json
 GET http://localhost:5000/tasks/1
 ```
 
-![Buscar Tarefa por ID](https://github.com/ICEI-PUC-Minas-PPC-CC/ENG_SOFT_II_TF_CAL/blob/main/docs/img/Captura%20de%20tela%2025-12-16%20211252.png)
+<img src="https://github.com/ICEI-PUC-Minas-PPC-CC/ENG_SOFT_II_TF_CAL/blob/main/docs/img/Captura%20de%20tela%2025-12-16%20211252.png" alt="Buscar Tarefa por ID">
 
 ---
 
