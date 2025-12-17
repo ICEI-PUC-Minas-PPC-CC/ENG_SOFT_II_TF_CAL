@@ -73,15 +73,15 @@ O pipeline CI/CD foi implementado no arquivo `Jenkinsfile` e contém as seguinte
 ### Prints do Pipeline
 
 #### Print 1: Pipeline em Execução
-![Pipeline Executando](img/Captura%20de%20tela%2025-12-16%20203315.png)
+![Pipeline Executando](<img/Captura de tela 2025-12-16 203315.png>)
 *Descrição: Pipeline mostrando todas as stages sendo executadas*
 
 #### Print 2: Status Final do Build
-![Status Build](img/Captura%20de%20tela%2025-12-16%20203338.png)
+![Status Build](<img/Captura de tela 2025-12-16 203338.png>)
 *Descrição: Status final mostrando UNSTABLE (amarelo) devido aos 6 testes que falham intencionalmente*
 
 #### Print 3: Console Output
-![Console Output](img/Captura%20de%20tela%2025-12-16%20204107.png)
+![Console Output](<img/Captura de tela 2025-12-16 204107.png>)
 *Descrição: Logs do pipeline durante execução*
 
 ---
@@ -119,7 +119,7 @@ O pipeline CI/CD foi implementado no arquivo `Jenkinsfile` e contém as seguinte
 
 ### Relatório JUnit
 
-![Relatório JUnit](img/Captura%20de%20tela%2025-12-16%20204515.png)
+![Relatório JUnit](<img/Captura de tela 2025-12-16 204515.png>)
 *Descrição: Relatório JUnit completo gerado pelo Jenkins mostrando 9 testes passando e 6 falhando*
 
 ---
@@ -134,7 +134,7 @@ O pipeline CI/CD foi implementado no arquivo `Jenkinsfile` e contém as seguinte
 | Linhas Cobertas | ~186/198 |
 | Funções Cobertas | Todas principais |
 
-![Cobertura Detalhada](img/Captura%20de%20tela%2025-12-16%20204541.png)
+![Cobertura Detalhada](<img/Captura de tela 2025-12-16 204541.png>)
 *Descrição: Relatório detalhado de cobertura por arquivo*
 
 ### Artefatos Gerados
@@ -145,7 +145,7 @@ O pipeline CI/CD foi implementado no arquivo `Jenkinsfile` e contém as seguinte
 - `coverage.xml` - Relatório de cobertura XML
 - `build-info.txt` - Informações do build
 
-![Artefatos](img/Captura%20de%20tela%2025-12-16%20205057.png)
+![Artefatos](<img/Captura de tela 2025-12-16 205057.png>)
 *Descrição: Lista de artefatos empacotados pelo pipeline*
 
 ---
@@ -159,7 +159,7 @@ O pipeline CI/CD foi implementado no arquivo `Jenkinsfile` e contém as seguinte
 GET http://localhost:5000/health
 ```
 
-![Health Check](img/Captura%20de%20tela%2025-12-16%20205452.png)
+![Health Check](<img/Captura de tela 2025-12-16 205452.png>)
 
 **Resposta Esperada:**
 ```json
@@ -183,7 +183,7 @@ Content-Type: application/json
 }
 ```
 
-![Criar Tarefa](img/Captura%20de%20tela%2025-12-16%20210641.png)
+![Criar Tarefa](<img/Captura de tela 2025-12-16 210641.png>)
 
 ### Print 3: Listar Tarefas
 
@@ -192,7 +192,7 @@ Content-Type: application/json
 GET http://localhost:5000/tasks
 ```
 
-![Listar Tarefas](img/Captura%20de%20tela%2025-12-16%20210843.png)
+![Listar Tarefas](<img/Captura de tela 2025-12-16 210843.png>)
 
 ### Print 4: Atualizar Tarefa
 
@@ -207,7 +207,7 @@ Content-Type: application/json
 }
 ```
 
-![Atualizar Tarefa](img/Captura%20de%20tela%2025-12-16%20211222.png)
+![Atualizar Tarefa](<img/Captura de tela 2025-12-16 211222.png>)
 
 ### Print 5: Buscar Tarefa por ID
 
@@ -216,7 +216,7 @@ Content-Type: application/json
 GET http://localhost:5000/tasks/1
 ```
 
-![Buscar Tarefa por ID](img/Captura%20de%20tela%2025-12-16%20211252.png)
+![Buscar Tarefa por ID](<img/Captura de tela 2025-12-16 211252.png>)
 
 ---
 

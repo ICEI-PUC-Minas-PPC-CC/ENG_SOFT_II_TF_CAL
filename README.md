@@ -278,22 +278,22 @@ O pipeline está configurado no arquivo `Jenkinsfile` na raiz do projeto e cont�
 
 ### Pipeline em Execução
 
-![Pipeline Executando](docs/img/Captura%20de%20tela%2025-12-16%20203315.png)
+![Pipeline Executando](<docs/img/Captura de tela 2025-12-16 203315.png>)
 *Pipeline mostrando todas as stages sendo executadas*
 
 ### Status Final
 
-![Status Build](docs/img/Captura%20de%20tela%2025-12-16%20203338.png)
+![Status Build](<docs/img/Captura de tela 2025-12-16 203338.png>)
 *Status UNSTABLE (amarelo) devido aos 6 testes que falham intencionalmente*
 
 ### Relatório JUnit
 
-![Test Results](docs/img/Captura%20de%20tela%2025-12-16%20204515.png)
+![Test Results](<docs/img/Captura de tela 2025-12-16 204515.png>)
 *Relatório JUnit mostrando 9 testes passando e 6 falhando*
 
 ### Relatório de Cobertura
 
-![Cobertura](docs/img/Captura%20de%20tela%2025-12-16%20204541.png)
+![Cobertura](<docs/img/Captura de tela 2025-12-16 204541.png>)
 *Relatório HTML de cobertura de código (94%)*
 
 ### Status dos Testes
