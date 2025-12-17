@@ -278,17 +278,17 @@ O pipeline está configurado no arquivo `Jenkinsfile` na raiz do projeto e cont�
 
 ### Pipeline em Execução
 
-<img src="https://github.com/ICEI-PUC-Minas-PPC-CC/ENG_SOFT_II_TF_CAL/blob/main/docs/img/Captura%20de%20tela%2025-12-16%20203315.png" alt="Pipeline Executando">
+<img src="https://github.com/ICEI-PUC-Minas-PPC-CC/ENG_SOFT_II_TF_CAL/blob/main/docs/img/Captura%20de%20tela%202025-12-16%20205452.png" alt="Pipeline Executando">
 *Pipeline mostrando todas as stages sendo executadas*
 
 ### Status Final
 
-<img src="https://github.com/ICEI-PUC-Minas-PPC-CC/ENG_SOFT_II_TF_CAL/blob/main/docs/img/Captura%20de%20tela%2025-12-16%20203338.png" alt="Status Build">
+<img src="https://github.com/ICEI-PUC-Minas-PPC-CC/ENG_SOFT_II_TF_CAL/blob/main/docs/img/Captura%20de%20tela%202025-12-16%20210843.png">
 *Status UNSTABLE (amarelo) devido aos 6 testes que falham intencionalmente*
 
 ### Relatório JUnit
 
-<img src="https://github.com/ICEI-PUC-Minas-PPC-CC/ENG_SOFT_II_TF_CAL/blob/main/docs/img/Captura%20de%20tela%2025-12-16%20204515.png" alt="Test Results">
+<img src="https://github.com/ICEI-PUC-Minas-PPC-CC/ENG_SOFT_II_TF_CAL/blob/main/docs/img/image.png">
 *Relatório JUnit mostrando 9 testes passando e 6 falhando*
 
 ### Relatório de Cobertura
