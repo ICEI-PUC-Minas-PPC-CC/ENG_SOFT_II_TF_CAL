@@ -18,19 +18,25 @@
 
 ---
 
+## Documentação
+
+- **[Relatório Final](docs/RELATORIO_FINAL.md)** - Relatório completo do trabalho final com prints, casos de teste, arquitetura e conclusões
+
+---
+
 ## Descrição do Projeto
 
 Este projeto implementa uma **API REST** para gerenciamento de tarefas (TODO) desenvolvida em **Python/Flask**, com integração completa de **pipeline CI/CD utilizando Jenkins**. A aplicação demonstra práticas de engenharia de software, incluindo desenvolvimento, testes automatizados, build, execução e documentação.
 
 ### Funcionalidades da API
 
-- ✅ Criar tarefas
-- ✅ Listar todas as tarefas
-- ✅ Buscar tarefa por ID
-- ✅ Atualizar tarefas
-- ✅ Remover tarefas
-- ✅ Filtrar tarefas por status
-- ✅ Health check da API
+- Criar tarefas
+- Listar todas as tarefas
+- Buscar tarefa por ID
+- Atualizar tarefas
+- Remover tarefas
+- Filtrar tarefas por status
+- Health check da API
 
 ### Status das Tarefas
 
@@ -272,49 +278,50 @@ O pipeline está configurado no arquivo `Jenkinsfile` na raiz do projeto e cont�
 
 ### Pipeline em Execução
 
-![Pipeline Executando](docs/img/Captura de tela 2025-12-16 203315.png)
+![Pipeline Executando](docs/img/Captura%20de%20tela%2025-12-16%20203315.png)
 *Pipeline mostrando todas as stages sendo executadas*
 
 ### Status Final
 
-![Status Build](docs/img/Captura de tela 2025-12-16 203338.png)
+![Status Build](docs/img/Captura%20de%20tela%2025-12-16%20203338.png)
 *Status UNSTABLE (amarelo) devido aos 6 testes que falham intencionalmente*
 
 ### Relatório JUnit
 
-![Test Results](docs/img/Captura de tela 2025-12-16 204515.png)
+![Test Results](docs/img/Captura%20de%20tela%2025-12-16%20204515.png)
 *Relatório JUnit mostrando 9 testes passando e 6 falhando*
 
 ### Relatório de Cobertura
 
-![Cobertura](docs/img/Captura de tela 2025-12-16 204541.png)
+![Cobertura](docs/img/Captura%20de%20tela%2025-12-16%20204541.png)
 *Relatório HTML de cobertura de código (94%)*
 
 ### Status dos Testes
 
-- ✅ **9 testes passando**
-- ❌ **6 testes falhando** (intencionalmente)
+- **9 testes passando**
+- **6 testes falhando** (intencionalmente)
 
 ---
 
-## 📝 Casos de Teste Documentados
+## Casos de Teste Documentados
 
 ### Casos de Teste - Funcionalidades Principais
 
 | ID | Caso de Teste | Status | Descrição |
 |---|---|---|---|
-| CT-01 | Health Check | ✅ Passa | Verifica se API está respondendo |
-| CT-02 | Criar Tarefa | ✅ Passa | Cria nova tarefa com título |
-| CT-03 | Listar Tarefas | ✅ Passa | Retorna todas as tarefas |
-| CT-04 | Buscar por ID | ✅ Passa | Retorna tarefa específica |
-| CT-05 | Atualizar Tarefa | ✅ Passa | Modifica dados da tarefa |
-| CT-06 | Remover Tarefa | ✅ Passa | Deleta tarefa do sistema |
-| CT-07 | Filtrar por Status | ✅ Passa | Filtra tarefas por status |
-| CT-08 | Validação de Título | ✅ Passa | Impede criação sem título |
-| CT-09 | Prioridade | ❌ Falha | Campo não implementado |
-| CT-10 | Data Vencimento | ❌ Falha | Campo não implementado |
-| CT-11 | Paginação | ❌ Falha | Funcionalidade não implementada |
-| CT-12 | Atribuição Usuário | ❌ Falha | Funcionalidade não implementada |
+| CT-01 | Health Check | Passa | Verifica se API está respondendo |
+| CT-02 | Criar Tarefa | Passa | Cria nova tarefa com título |
+| CT-03 | Listar Tarefas | Passa | Retorna todas as tarefas |
+| CT-04 | Buscar por ID | Passa | Retorna tarefa específica |
+| CT-05 | Atualizar Tarefa | Passa | Modifica dados da tarefa |
+| CT-06 | Remover Tarefa | Passa | Deleta tarefa do sistema |
+| CT-07 | Filtrar por Status | Passa | Filtra tarefas por status |
+| CT-08 | Validação de Título | Passa | Impede criação sem título |
+| CT-09 | Prioridade | Falha | Campo não implementado |
+| CT-10 | Data Vencimento | Falha | Campo não implementado |
+| CT-11 | Paginação | Falha | Funcionalidade não implementada |
+| CT-12 | Atribuição Usuário | Falha | Funcionalidade não implementada |
+
 
 ---
 
@@ -436,6 +443,7 @@ Este projeto foi desenvolvido para fins educacionais.
 
 ## Links Úteis
 
+- [Relatório Final](docs/RELATORIO_FINAL.md) - Relatório completo do trabalho final
 - [Documentação Flask](https://flask.palletsprojects.com/)
 - [Documentação pytest](https://docs.pytest.org/)
 - [Documentação Jenkins](https://www.jenkins.io/doc/)
