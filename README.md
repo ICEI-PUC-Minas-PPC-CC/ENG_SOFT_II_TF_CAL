@@ -327,8 +327,6 @@ O pipeline está configurado no arquivo `Jenkinsfile` na raiz do projeto e cont�
 
 ## Configuração do Jenkins
 
-> **Não tem Jenkins?** Veja [INSTALAR_JENKINS.md](INSTALAR_JENKINS.md) para instalar, ou use **GitHub Actions** como alternativa (já configurado em `.github/workflows/ci.yml`)!
-
 ### Pré-requisitos no Jenkins
 
 1. **Plugins necessários**:
