@@ -293,7 +293,7 @@ O pipeline está configurado no arquivo `Jenkinsfile` na raiz do projeto e cont�
 
 ### Relatório de Cobertura
 
-<img src="https://github.com/ICEI-PUC-Minas-PPC-CC/ENG_SOFT_II_TF_CAL/blob/main/docs/img/Captura%20de%20tela%2025-12-16%20204541.png" alt="Cobertura">
+<img src="https://github.com/ICEI-PUC-Minas-PPC-CC/ENG_SOFT_II_TF_CAL/blob/main/docs/img/Captura%20de%20tela%202025-12-16%20221513.png" alt="Cobertura">
 *Relatório HTML de cobertura de código (94%)*
 
 ### Status dos Testes
